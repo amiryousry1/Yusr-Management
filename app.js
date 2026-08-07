@@ -7,7 +7,7 @@
     paymentFeePct: 1, // 1% default
     marginGatePct: 25, // 25% default
     defaultInstructorSharePct: 60, // 60% default
-    refreshSeconds: 120,
+    refreshSeconds: 3600, // 1 hour auto-refresh default
     sources: {
       decision: 'Decision Center',
       launch: 'Launch Packs',
@@ -456,6 +456,7 @@
       default: html = overview(); break;
     }
     els.root.innerHTML = html;
+    if (window.lucide) window.lucide.createIcons();
   }
 
   function wireTableFilter(searchInputId, filterSelectId, containerId, rows, renderFn) {
@@ -1756,5 +1757,5 @@
   renderCurrent();
   renderHealthPanel();
   refreshData(false);
-  setInterval(() => refreshData(false), CFG.refreshMs || 120000);
+  setInterval(() => refreshData(false), CFG.refreshMs || 3600000);
 })();
