@@ -1,0 +1,126 @@
+/* ===================================
+   Yusr Dashboard V2 — Custom Styles
+   =================================== */
+
+/* Base */
+html { scroll-behavior: smooth; }
+body { font-family: 'Cairo', sans-serif; -webkit-font-smoothing: antialiased; }
+
+/* Custom Scrollbars */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* Number typography isolation for English numbers in RTL */
+.num { direction: ltr; display: inline-block; unicode-bidi: isolate; }
+
+/* Range input custom styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #075f63;
+  cursor: pointer;
+  box-shadow: 0 0 0 4px rgba(7, 95, 99, 0.15);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  background: #0d9488;
+}
+
+/* Toast animation */
+#toast {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(100px);
+  opacity: 0;
+}
+#toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Dynamic Search Dropdown */
+.search-results {
+  position: fixed;
+  top: 76px;
+  right: 320px;
+  width: min(520px, calc(100vw - 360px));
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.15);
+  z-index: 60;
+  max-height: 440px;
+  overflow-y: auto;
+}
+@media (max-width: 1024px) {
+  .search-results {
+    right: 16px;
+    left: 16px;
+    width: auto;
+    top: 70px;
+  }
+}
+
+/* Source health indicator */
+.source-health-panel {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  min-width: 320px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.15);
+  z-index: 60;
+  padding: 1rem;
+  display: none;
+}
+.source-health-panel.show {
+  display: block;
+}
+
+/* Status dot colors */
+.dot-live { background-color: #22c55e; }
+.dot-stale { background-color: #eab308; }
+.dot-failed { background-color: #ef4444; }
+.dot-snapshot { background-color: #94a3b8; }
+
+/* Badge styles */
+.badge-planning {
+  background: #dbeafe;
+  color: #1e40af;
+  border-color: #93c5fd;
+}
+.badge-actual {
+  background: #dcfce7;
+  color: #166534;
+  border-color: #86efac;
+}
+.badge-needs-input {
+  background: #fef3c7;
+  color: #92400e;
+  border-color: #fcd34d;
+}
+
+/* Table text wrapping for long text columns */
+.table-wrap-cell {
+  white-space: normal;
+  word-break: break-word;
+  min-width: 120px;
+  max-width: 280px;
+}
