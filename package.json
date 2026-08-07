@@ -1,0 +1,10 @@
+{
+  "name": "yusr-dashboard",
+  "version": "1.2.0",
+  "private": true,
+  "description": "Yusr Control Center V1.2",
+  "scripts": {
+    "dev": "npx -y serve .",
+    "start": "npx -y serve ."
+  }
+}
